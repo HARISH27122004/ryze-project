@@ -75,11 +75,9 @@
   position: absolute;
   inset: 0;
   border-radius: 30px;
-  background: radial-gradient(
-    circle at center,
-    rgba(210, 233, 233, 0.5),
-    transparent 70%
-  );
+  background: radial-gradient(circle at center,
+      rgba(210, 233, 233, 0.5),
+      transparent 70%);
   opacity: 0;
   transform: scale(0.4);
   transition: all 0.4s ease;
