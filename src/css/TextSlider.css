@@ -1,0 +1,69 @@
+.text-container {
+  overflow: hidden;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: flex-start;
+  margin-top: 100px;
+  color: #a855f7;
+}
+
+.text-slider {
+  display: flex;
+  flex-direction: column;
+  animation: slide-up 4s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+}
+
+.word {
+  height: 1.2em;
+  line-height: 1.2em;
+  white-space: nowrap;
+  font-size: 2.1rem;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0%);
+  }
+
+  30% {
+    transform: translateY(0%);
+  }
+
+  /* hold "ALL IN ONE PLACE" */
+  45% {
+    transform: translateY(-33.33%);
+  }
+
+  /* slide to "RYZE" */
+  75% {
+    transform: translateY(-33.33%);
+  }
+
+  /* hold "RYZE" */
+  90% {
+    transform: translateY(0%);
+  }
+
+  /* slide to clone */
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media (max-width: 700px) {
+  .text-container {
+    overflow: hidden;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: flex-start;
+    margin-top: 100px;
+    color: #a855f7;
+  }
+
+  .word {
+    height: 1.2em;
+    line-height: 1.2em;
+    white-space: nowrap;
+    font-size: 1.2rem;
+  }
+}

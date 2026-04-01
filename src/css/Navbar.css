@@ -1,0 +1,131 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 40px;
+  border-radius: 50px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.navbar--dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.navbar--dark .navbar__link {
+  color: white;
+}
+
+.navbar--dark .navbar__burger span {
+  background: white;
+}
+
+.navbar--light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.navbar--light .navbar__link {
+  color: black;
+}
+
+.navbar--light .navbar__burger span {
+  background: black;
+}
+
+.navbar--scrolled.navbar--dark {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar--scrolled.navbar--light {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.navbar__link {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.navbar__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  background: radial-gradient(
+    circle at center,
+    rgba(210, 233, 233, 0.5),
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.4s ease;
+}
+
+.navbar__link:hover::before {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.navbar__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  right: 20px;
+}
+
+.navbar__burger span {
+  width: 24px;
+  height: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 640px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__burger {
+    display: flex;
+  }
+}
+
+.navbar--visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.navbar--hidden {
+  transform: translateX(-50%) translateY(-150%);
+  opacity: 0;
+  pointer-events: none;
+}

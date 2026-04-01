@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Section wrapper ─────────────────────────────────────── */
+.wwd {
+  background: #0d0d0f;
+  padding: 80px 48px 96px;
+}
+
+/* ── Eyebrow ─────────────────────────────────────────────── */
+.wwd__eyebrow {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7c3aed;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+/* ── Heading ─────────────────────────────────────────────── */
+.wwd__heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  text-align: center;
+  color: #f0eeea;
+  margin-bottom: 56px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.wwd__heading span {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.wwd__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 0 auto;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.wwd__card {
+  position: relative;
+  background: #131316;
+  border: 1px solid #1f1f26;
+  border-radius: 16px;
+  padding: 32px 28px 36px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  text-align: center;
+}
+
+/* purple radial glow at top — hidden by default */
+.wwd__card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 180px;
+  background: radial-gradient(ellipse at 50% -10%, rgba(124, 58, 237, 0.25) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.wwd__card:hover {
+  background: #16121f;
+  border-color: #2d2040;
+}
+
+.wwd__card:hover::before {
+  opacity: 1;
+}
+
+/* ── Active state ────────────────────────────────────────── */
+.wwd__card--active {
+  background: #17122a;
+  border-color: #3b1f6e;
+}
+
+.wwd__card--active::before {
+  opacity: 1;
+}
+
+/* ── Bottom bar (active indicator) ──────────────────────── */
+.wwd__bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0 0 2px 2px;
+}
+
+.wwd__card--active .wwd__bar {
+  transform: scaleX(1);
+}
+
+/* ── Card top row: number + icon ─────────────────────────── */
+.wwd__card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+/* ── Number ──────────────────────────────────────────────── */
+.wwd__num {
+  font-family: 'Syne', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #3a3a48;
+  font-weight: 700;
+  transition: color 0.3s;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.wwd__card--active .wwd__num,
+.wwd__card:hover .wwd__num {
+  color: #6d28d9;
+}
+
+/* ── Icon wrapper ────────────────────────────────────────── */
+.wwd__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #1c1c24;
+  border: 1px solid #28283a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s, border-color 0.3s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd__card:hover .wwd__icon-wrap {
+  background: #1e1436;
+  border-color: #4c1d95;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.wwd__card--active .wwd__icon-wrap {
+  background: #20103e;
+  border-color: #5b21b6;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.wwd__icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  color: #4c3a7a;
+  transition: color 0.3s;
+}
+
+.wwd__card:hover .wwd__icon-wrap svg,
+.wwd__card--active .wwd__icon-wrap svg {
+  color: #a78bfa;
+}
+
+/* ── Title ───────────────────────────────────────────────── */
+.wwd__title {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #ccc9c4;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  transition: color 0.3s;
+}
+
+.wwd__card:hover .wwd__title,
+.wwd__card--active .wwd__title {
+  color: #f0eeea;
+}
+
+/* ── Description ─────────────────────────────────────────── */
+.wwd__desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: #e5e5f2;
+  line-height: 1.7;
+  font-weight: 400;
+  transition: color 0.3s;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.wwd__card:hover .wwd__desc,
+.wwd__card--active .wwd__desc {
+  color: white;
+}
+
+/* ── Learn more ──────────────────────────────────────────── */
+.wwd__learn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #383840;
+  letter-spacing: 0.02em;
+  transition: color 0.35s, gap 0.3s ease;
+}
+
+.wwd__learn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wwd__card:hover .wwd__learn,
+.wwd__card--active .wwd__learn {
+  color: #7c3aed;
+  gap: 10px;
+}
+
+.wwd__card:hover .wwd__learn svg,
+.wwd__card--active .wwd__learn svg {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .wwd__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    row-gap: 20px;
+  }
+  .wwd {
+    padding: 60px 20px 72px;
+  }
+}
+
+.wwd-svg{
+  height: 100px;
+  width: 100px;
+  color: white;
+}
+
+#services{
+  background-color: #000000;
+}
+
+.wwd__card:hover {
+  transform: translateY(-5px);
+}

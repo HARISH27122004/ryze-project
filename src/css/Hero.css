@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  z-index: 10;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+}
+
+/* =========================
+   TEXT STYLING
+========================= */
+.hero__content p {
+  margin: 0;
+}
+
+.hero__tagline {
+  margin-top: 20px;
+  font-size: clamp(12px, 1.5vw, 16px);
+  letter-spacing: 0.3em;
+}
+
+/* =========================
+   OPTIONAL GLOW BACKGROUND (nice effect)
+========================= */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      rgba(99, 102, 241, 0.25),
+      transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.oswald-hero {
+  font-family: 'Syne', sans-serif;
+  font-size: 128px;
+  font-weight: 500;
+  letter-spacing: -0.07em;
+}
+
+@media (max-width: 700px) {
+  .oswald-hero {
+    font-size: 48px !important;
+  }
+}
+
+@media (max-width: 1440px) {
+  .oswald-hero {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 897px) {
+  .oswald-hero {
+    font-size: 80px;
+  }
+}

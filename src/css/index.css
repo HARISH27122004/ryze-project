@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Press+Start+2P&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --purple: #6B21A8;
+  --purple-mid: #7C3AED;
+  --purple-light: #C4B5FD;
+  --purple-bg: #E9D5FF;
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #6B7280;
+  --light-gray: #F9FAFB;
+  --card-border: #E5E7EB;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: #111;
+  overflow-x: hidden;
+}
+
+.app { width: 100%; }
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }

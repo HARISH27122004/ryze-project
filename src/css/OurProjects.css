@@ -1,0 +1,219 @@
+.projects {
+  padding: 100px 60px;
+  background: #fff;
+}
+
+.projects__heading {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.projects__dropdown-wrap {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 60px;
+}
+
+.projects__dropdown-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border: 2px solid #C4B5FD;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6B21A8;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.projects__dropdown-btn:hover { background: #F5F3FF; }
+
+.projects__arrow {
+  color: #7C3AED;
+  font-size: 12px;
+}
+
+.projects__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #E9D5FF;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(107,33,168,0.12);
+  overflow: hidden;
+  z-index: 50;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.projects__dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.projects__dropdown-item:hover { background: #F5F3FF; color: #6B21A8; }
+.projects__dropdown-item--active { background: #EDE9FE; color: #6B21A8; font-weight: 700; }
+
+/* Card */
+.projects__card {
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  padding: 48px 48px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.projects__card-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 14px;
+}
+
+.projects__card-detail {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.projects__what-label,
+.projects__industries-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.projects__what-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.projects__what-list li {
+  font-size: 14px;
+  color: #374151;
+  padding-left: 16px;
+  position: relative;
+}
+.projects__what-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #6B21A8;
+  border-radius: 50%;
+}
+
+.projects__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.projects__tag {
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #EDE9FE;
+  color: #6B21A8;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Testimonial */
+.projects__testimonial {
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.projects__test-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.projects__test-quote {
+  font-style: italic;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.projects__test-client {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.projects__test-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.projects__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.projects__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+.projects__dot--active { background: #111; }
+
+@media (max-width: 900px) {
+  .projects { padding: 80px 24px; }
+  .projects__card { grid-template-columns: 1fr; gap: 32px; padding: 32px 24px; }
+}
