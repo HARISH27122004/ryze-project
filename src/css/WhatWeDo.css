@@ -71,7 +71,7 @@
 }
 
 .wwd__card:hover {
-  background: #16121f;
+  background: #17122a;
   border-color: #2d2040;
 }
 
@@ -81,7 +81,7 @@
 
 /* ── Active state ────────────────────────────────────────── */
 .wwd__card--active {
-  background: #17122a;
+  background: black;
   border-color: #3b1f6e;
 }
 
