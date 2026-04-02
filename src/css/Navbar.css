@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   position: fixed;
   top: 20px;
   left: 50%;
@@ -126,4 +126,175 @@
   transform: translateX(-50%) translateY(-150%);
   opacity: 0;
   pointer-events: none;
+} */
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 40px;
+
+  border-radius: 50px;
+
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* =========================
+   SHOW / HIDE
+========================= */
+.navbar--visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.navbar--hidden {
+  transform: translateX(-50%) translateY(-150%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================
+   THEMES
+========================= */
+.navbar--dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.navbar--light {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.navbar--dark .navbar__burger span {
+  background: white;
+}
+
+.navbar--light .navbar__burger span {
+  background: black;
+}
+
+.navbar--scrolled.navbar--dark {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar--scrolled.navbar--light {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* =========================
+   LINKS
+========================= */
+.navbar__links {
+  display: flex;
+  gap: 50px;
+}
+
+.navbar__link {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  color: inherit;
+}
+
+/* =========================
+   BURGER
+========================= */
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.navbar__burger span {
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 X animation */
+.navbar__burger span.open:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+.navbar__burger span.open:nth-child(2) {
+  opacity: 0;
+}
+.navbar__burger span.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+.navbar__mobile {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 20px 24px;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.navbar__mobile a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 640px) {
+  /* 🔥 Make navbar full width on mobile */
+  .navbar {
+    left: 0;
+    transform: none;
+    width: 100%;
+
+    justify-content: flex-end; /* push content right */
+    padding: 14px 20px;
+  }
+
+  /* hide links */
+  .navbar__links {
+    display: none;
+  }
+
+  /* 🔥 burger at top-right */
+  .navbar__burger {
+    display: flex;
+
+    position: relative; /* no fixed needed now */
+    right: 0;
+    top: 0;
+
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+  }
 }
