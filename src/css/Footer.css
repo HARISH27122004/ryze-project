@@ -29,7 +29,7 @@
 }
 
 .footer__col-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   color: #111;
   margin-bottom: 20px;
@@ -42,7 +42,7 @@
 }
 
 .footer__links a {
-  font-size: 14px;
+  font-size: 16px;
   color: #9CA3AF;
   transition: color 0.2s;
 }
@@ -60,3 +60,4 @@
   .footer__body { grid-template-columns: 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }
 }
+

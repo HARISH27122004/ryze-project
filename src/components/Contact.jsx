@@ -8,6 +8,7 @@ export default function Contact() {
   const handleSubmit = e => { e.preventDefault(); alert('Message sent!'); };
 
   return (
+    <>
     <section className="contact" id="contact" data-theme="light">
       <h2 className="contact__headline">
         Happy to See You On Board<br />
@@ -96,5 +97,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
+    </>
   );
 }

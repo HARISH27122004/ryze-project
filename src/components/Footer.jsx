@@ -6,7 +6,6 @@ export default function Footer() {
         <footer className="footer" id="footer" data-theme="light">
             <div className="footer__body">
                 <div className="footer__brand">
-                    
                     <TrueFocus
                         sentence="RYZE WORKS"
                         manualMode={false}
@@ -28,8 +27,8 @@ export default function Footer() {
                 <div className="footer__col">
                     <h4 className="footer__col-title">Follow Us</h4>
                     <ul className="footer__links">
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/company/officalryzeworks/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/ryzeworks_official?igsh=MWhqNW5hdm9lbnhi" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                     </ul>
                 </div>
             </div>

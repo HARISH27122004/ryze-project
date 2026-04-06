@@ -258,3 +258,9 @@
 .wwd__card:hover {
   transform: translateY(-5px);
 }
+
+@media (max-width: 437px) {
+  .wwd__heading {
+    font-size: 30px;
+  }
+}
